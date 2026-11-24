@@ -19,8 +19,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border-radius: 20px;
-        padding: 5px;
+        border-radius: 10px;
+    
     }
     .active{
         background-color: rgb(19, 88, 1);
