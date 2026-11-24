@@ -137,7 +137,7 @@ function VoiceAssistant() {
         <div className="va-brand">
           <span className="va-logo">🌿</span>
           <div>
-            <h2>ZERO-WASTE KITCHEN AI</h2>
+            <h2>SMART CHEF</h2>
             <p>Smart Cooking Assistant</p>
           </div>
         </div>

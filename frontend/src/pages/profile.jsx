@@ -17,7 +17,8 @@ const defaultProfile = {
   emailUpdates: false,
 };
 
-function Profile() {
+function Profile({setname}) {
+  setname("Profile");
   const [profile, setProfile] = useState(defaultProfile);
   const [editing, setEditing] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -64,22 +65,6 @@ function Profile() {
 
   return (
     <div className="profile-page">
-      {/* Navigation */}
-      <nav className="profile-navbar">
-        <a href="/" className="profile-brand">
-          <span className="brand-icon">🌿</span>
-          ZERO-WASTE KITCHEN AI
-        </a>
-
-        <div className="profile-nav-links">
-          <a href="/">HOME</a>
-          <a href="/generate">GENERATE</a>
-          <a href="/explore">EXPLORE</a>
-          <a href="/saved">SAVED</a>
-          <a href="/tracker">TRACKER</a>
-          <a href="/profile" className="active">PROFILE</a>
-        </div>
-      </nav>
 
       <main className="profile-container">
         {/* Header */}
@@ -401,9 +386,9 @@ function Profile() {
 
         {/* Footer */}
         <footer className="profile-footer">
-          <h3>🌿 ZERO-WASTE KITCHEN AI</h3>
+          <h3>🌿 SMART CHEF</h3>
           <p>Your account. Your preferences. Your kitchen.</p>
-          <span>© {new Date().getFullYear()} Zero-Waste Kitchen AI</span>
+          <span>© {new Date().getFullYear()} SMART CHEF</span>
         </footer>
       </main>
 

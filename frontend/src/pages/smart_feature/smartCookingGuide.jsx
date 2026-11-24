@@ -97,7 +97,7 @@ function SmartCookingGuide() {
         <div className="scg-brand">
           <span className="scg-logo">🌿</span>
           <div>
-            <h2>ZERO-WASTE KITCHEN AI</h2>
+            <h2>SMART CHEF</h2>
             <p>Smart Cooking</p>
           </div>
         </div>

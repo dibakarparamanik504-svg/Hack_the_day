@@ -55,7 +55,8 @@ const initialHistory = [
   }
 ];
 
-function Tracker() {
+function Tracker({setname}) {
+  setname("Tracker");
   const [history, setHistory] = useState(() => {
     try {
       const stored = localStorage.getItem("zwk_tracker_history");
@@ -234,20 +235,6 @@ function Tracker() {
   return (
     <div className="tracker-page">
 
-      {/* NAVBAR */}
-      <nav className="tracker-navbar">
-        <a href="/" className="tracker-logo">
-          🌿 ZERO-WASTE <span>KITCHEN AI</span>
-        </a>
-
-        <div className="tracker-nav-links">
-          <a href="/">HOME</a>
-          <a href="/generate">GENERATE</a>
-          <a href="/explore">EXPLORE</a>
-          <a href="/saved">SAVED</a>
-          <a href="/tracker" className="active">TRACKER</a>
-        </div>
-      </nav>
 
       {/* HERO */}
       <section className="tracker-hero">
@@ -629,9 +616,9 @@ function Tracker() {
 
       {/* FOOTER */}
       <footer className="tracker-footer">
-        <a href="/" className="tracker-logo">🌿 ZERO-WASTE KITCHEN AI</a>
+        <div className="tracker-logo">🌿 SMART CHEF</div>
         <p>Every leftover reused is a step towards less food waste.</p>
-        <small>© 2026 ZERO-WASTE KITCHEN AI. All rights reserved.</small>
+        <small>© 2026 SMART CHEF. All rights reserved.</small>
       </footer>
 
     </div>

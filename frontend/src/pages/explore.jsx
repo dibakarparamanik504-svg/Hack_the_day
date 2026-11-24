@@ -193,7 +193,8 @@ const collections = [
   "No-Waste Family Meals"
 ];
 
-function Explore() {
+function Explore({setname}) {
+  setname("Explore")
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [ingredient, setIngredient] = useState("");
@@ -265,20 +266,6 @@ function Explore() {
 
   return (
     <div className="explore-page">
-
-      {/* NAVBAR */}
-      <nav className="explore-navbar">
-        <a href="/" className="explore-logo">🌿 ZERO-WASTE <span>KITCHEN AI</span></a>
-
-        <div className="explore-nav-links">
-          <a href="/">HOME</a>
-          <a href="/generate">GENERATE</a>
-          <a href="/explore" className="active">EXPLORE</a>
-          <a href="/saved">SAVED</a>
-          <a href="/tracker">TRACKER</a>
-        </div>
-      </nav>
-
       {/* HERO */}
       <section className="explore-hero">
         <div className="explore-hero-content">
@@ -319,7 +306,7 @@ function Explore() {
             alt="Fresh vegetable meal"
           />
           <div className="explore-image-label">
-            <span>🌿</span>
+            <span>🌿 SMART CHEF  </span>
             <div>
               <strong>Cook Smart. Waste Less.</strong>
               <small>Every ingredient has potential.</small>
@@ -588,9 +575,9 @@ function Explore() {
 
       {/* FOOTER */}
       <footer className="explore-footer">
-        <a href="/" className="explore-logo">🌿 ZERO-WASTE KITCHEN AI</a>
+        <div href="/" className="explore-logo">🌿 SMART CHEF</div>
         <p>Discover more. Waste less. Cook creatively.</p>
-        <span>© 2026 ZERO-WASTE KITCHEN AI. All rights reserved.</span>
+        <span>© 2026 SMART CHEF. All rights reserved.</span>
       </footer>
 
     </div>

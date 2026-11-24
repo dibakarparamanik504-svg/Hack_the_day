@@ -73,7 +73,7 @@ function SmartNutritionAnalyzer() {
         <div className="nutrition-brand">
           <span className="nutrition-logo">🌿</span>
           <div>
-            <h2>ZERO-WASTE KITCHEN AI</h2>
+            <h2>SMART CHEF</h2>
             <p>Smart Kitchen • Less Waste</p>
           </div>
         </div>

@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
 import "./generate.css";
 
-function Generate() {
+function Generate({ setname }) {
+  setname("Generate");
   const [ingredients, setIngredients] = useState(["Cooked rice"]);
   const [ingredientInput, setIngredientInput] = useState("");
   const [image, setImage] = useState(null);
@@ -24,9 +25,7 @@ function Generate() {
 
     if (
       value &&
-      !ingredients.some(
-        (item) => item.toLowerCase() === value.toLowerCase()
-      )
+      !ingredients.some((item) => item.toLowerCase() === value.toLowerCase())
     ) {
       setIngredients([...ingredients, value]);
       setIngredientInput("");
@@ -71,83 +70,39 @@ function Generate() {
 
   return (
     <div className="app-shell">
-
-      {/* NAVBAR */}
-
-      <header className="topbar">
-
-        <a href="/" className="brand">
-          <span className="brand-icon">🌿</span>
-          <span>
-            ZERO-WASTE
-            <b>KITCHEN AI</b>
-          </span>
-        </a>
-
-        <nav className="navigation">
-          <a href="/">HOME</a>
-          <a href="/generate" className="selected">GENERATE</a>
-          <a href="/explore">EXPLORE</a>
-          <a href="/saved">SAVED</a>
-          <a href="/tracker">TRACKER</a>
-        </nav>
-
-        <div className="topbar-label">
-          <span className="online-dot"></span>
-          GEMINI AI STUDIO
-        </div>
-
-      </header>
-
       <main className="generate-page">
-
         {/* PAGE INTRO */}
 
         <section className="page-intro">
-
-          <div className="intro-label">
-            ✳ GEMINI AI RECIPE STUDIO
-          </div>
-
           <h1>
             AI Recipe <span>Generator</span>
           </h1>
 
-          <p>
-            Turn your leftover ingredients into something delicious.
-          </p>
+          <p>Turn your leftover ingredients into something delicious.</p>
 
           <div className="intro-rule">
             <span></span>
             <span></span>
             <span></span>
           </div>
-
         </section>
 
         <form className="generator-layout" onSubmit={handleGenerate}>
-
           <div className="form-column">
-
             {/* 01 INGREDIENTS */}
 
             <section className="panel">
-
               <div className="panel-heading">
                 <div className="section-number">01</div>
 
                 <div>
-                  <div className="panel-eyebrow">
-                    START WITH WHAT YOU HAVE
-                  </div>
+                  <div className="panel-eyebrow">START WITH WHAT YOU HAVE</div>
 
                   <h2>Add Your Leftover Food</h2>
                 </div>
               </div>
 
-              <div className="upload-label">
-                UPLOAD FOOD IMAGE
-              </div>
+              <div className="upload-label">UPLOAD FOOD IMAGE</div>
 
               <div
                 className="upload-zone"
@@ -157,7 +112,12 @@ function Generate() {
 
                   const file = e.dataTransfer.files[0];
 
-                  if (file && ["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
+                  if (
+                    file &&
+                    ["image/jpeg", "image/png", "image/webp"].includes(
+                      file.type,
+                    )
+                  ) {
                     setImage({
                       file,
                       url: URL.createObjectURL(file),
@@ -165,10 +125,8 @@ function Generate() {
                   }
                 }}
               >
-
                 {image ? (
                   <div className="image-preview">
-
                     <img src={image.url} alt="Selected food" />
 
                     <div className="image-meta">
@@ -184,7 +142,6 @@ function Generate() {
                     >
                       Remove Image
                     </button>
-
                   </div>
                 ) : (
                   <>
@@ -195,7 +152,6 @@ function Generate() {
                     <p>JPG, PNG or WEBP</p>
 
                     <div className="upload-actions">
-
                       <button
                         type="button"
                         className="small-button dark"
@@ -211,7 +167,6 @@ function Generate() {
                       >
                         ◎ Take Photo
                       </button>
-
                     </div>
                   </>
                 )}
@@ -232,7 +187,6 @@ function Generate() {
                   capture="environment"
                   onChange={handleImage}
                 />
-
               </div>
 
               <div className="or-divider">
@@ -242,7 +196,6 @@ function Generate() {
               </div>
 
               <div className="ingredient-entry">
-
                 <input
                   value={ingredientInput}
                   onChange={(e) => setIngredientInput(e.target.value)}
@@ -262,11 +215,9 @@ function Generate() {
                 >
                   + Add Ingredient
                 </button>
-
               </div>
 
               <div className="ingredient-chips">
-
                 {ingredients.map((item) => (
                   <span className="ingredient-chip" key={item}>
                     {item}
@@ -279,33 +230,30 @@ function Generate() {
                     </button>
                   </span>
                 ))}
-
               </div>
-
             </section>
 
             {/* 02 FOOD DETAILS */}
 
             <section className="panel">
-
               <div className="panel-heading">
                 <div className="section-number">02</div>
 
                 <div>
-                  <div className="panel-eyebrow">
-                    FOOD INFORMATION
-                  </div>
+                  <div className="panel-eyebrow">FOOD INFORMATION</div>
 
                   <h2>Food Details</h2>
                 </div>
               </div>
 
               <div className="fields-grid">
-
                 <label className="field">
                   <span>Quantity</span>
 
-                  <select value={quantity} onChange={(e) => setQuantity(e.target.value)}>
+                  <select
+                    value={quantity}
+                    onChange={(e) => setQuantity(e.target.value)}
+                  >
                     <option>1 portion</option>
                     <option>1–2 portions</option>
                     <option>2–3 portions</option>
@@ -317,7 +265,10 @@ function Generate() {
                 <label className="field">
                   <span>Storage</span>
 
-                  <select value={storage} onChange={(e) => setStorage(e.target.value)}>
+                  <select
+                    value={storage}
+                    onChange={(e) => setStorage(e.target.value)}
+                  >
                     <option value="">Select storage</option>
                     <option>Refrigerated</option>
                     <option>Frozen</option>
@@ -329,7 +280,10 @@ function Generate() {
                 <label className="field">
                   <span>How long has it been stored?</span>
 
-                  <select value={duration} onChange={(e) => setDuration(e.target.value)}>
+                  <select
+                    value={duration}
+                    onChange={(e) => setDuration(e.target.value)}
+                  >
                     <option value="">Select duration</option>
                     <option>Less than 2 hours</option>
                     <option>2–4 hours</option>
@@ -344,7 +298,10 @@ function Generate() {
                 <label className="field">
                   <span>Dietary Preference</span>
 
-                  <select value={diet} onChange={(e) => setDiet(e.target.value)}>
+                  <select
+                    value={diet}
+                    onChange={(e) => setDiet(e.target.value)}
+                  >
                     <option value="">Choose preference</option>
                     <option>Vegetarian</option>
                     <option>Vegan</option>
@@ -363,38 +320,35 @@ function Generate() {
                     placeholder="e.g. peanuts, dairy, gluten"
                   />
                 </label>
-
               </div>
 
               <p className="field-note">
                 Share accurate storage details. When in doubt about food safety,
                 do not taste the food to check it.
               </p>
-
             </section>
 
             {/* 03 CUSTOMIZE */}
 
             <section className="panel">
-
               <div className="panel-heading">
                 <div className="section-number">03</div>
 
                 <div>
-                  <div className="panel-eyebrow">
-                    MAKE IT YOUR WAY
-                  </div>
+                  <div className="panel-eyebrow">MAKE IT YOUR WAY</div>
 
                   <h2>Customize Your Recipe</h2>
                 </div>
               </div>
 
               <div className="fields-grid">
-
                 <label className="field">
                   <span>Recipe Type</span>
 
-                  <select value={recipeType} onChange={(e) => setRecipeType(e.target.value)}>
+                  <select
+                    value={recipeType}
+                    onChange={(e) => setRecipeType(e.target.value)}
+                  >
                     <option value="">Choose recipe type</option>
                     <option>Breakfast</option>
                     <option>Lunch</option>
@@ -408,7 +362,10 @@ function Generate() {
                 <label className="field">
                   <span>Number of Servings</span>
 
-                  <select value={servings} onChange={(e) => setServings(e.target.value)}>
+                  <select
+                    value={servings}
+                    onChange={(e) => setServings(e.target.value)}
+                  >
                     {[1, 2, 3, 4, 5, 6].map((n) => (
                       <option key={n} value={n}>
                         {n} {n === 1 ? "serving" : "servings"}
@@ -421,8 +378,12 @@ function Generate() {
                   <span>Cooking Time</span>
 
                   <div className="choice-row">
-
-                    {["Any time", "Under 15 minutes", "Under 30 minutes", "Under 45 minutes"].map((time) => (
+                    {[
+                      "Any time",
+                      "Under 15 minutes",
+                      "Under 30 minutes",
+                      "Under 45 minutes",
+                    ].map((time) => (
                       <button
                         type="button"
                         key={time}
@@ -432,7 +393,6 @@ function Generate() {
                         {time}
                       </button>
                     ))}
-
                   </div>
                 </div>
 
@@ -440,7 +400,6 @@ function Generate() {
                   <span>Difficulty</span>
 
                   <div className="choice-row">
-
                     {["Easy", "Medium", "Any"].map((level) => (
                       <button
                         type="button"
@@ -451,25 +410,18 @@ function Generate() {
                         {level}
                       </button>
                     ))}
-
                   </div>
                 </div>
-
               </div>
-
             </section>
 
             {/* 04 FOOD SAFETY */}
 
             <section className="safety-panel">
-
               <div className="safety-icon">!</div>
 
               <div className="safety-content">
-
-                <div className="safety-kicker">
-                  04 — RESPONSIBLE COOKING
-                </div>
+                <div className="safety-kicker">04 — RESPONSIBLE COOKING</div>
 
                 <h2>AI Food Safety Verification</h2>
 
@@ -481,7 +433,6 @@ function Generate() {
                 </p>
 
                 <label className="safety-consent">
-
                   <input
                     type="checkbox"
                     checked={safetyChecked}
@@ -489,67 +440,54 @@ function Generate() {
                   />
 
                   <span>
-                    I understand that AI suggestions are not a guarantee of
-                    food safety. I will inspect food carefully and follow
-                    reliable food-safety guidance.
+                    I understand that AI suggestions are not a guarantee of food
+                    safety. I will inspect food carefully and follow reliable
+                    food-safety guidance.
                   </span>
-
                 </label>
-
               </div>
-
             </section>
 
             {/* 05 GENERATE */}
 
             <section className="generate-cta">
-
-              <div className="cta-kicker">
-                05 — LET AI GET CREATIVE
-              </div>
+              <div className="cta-kicker">05 — LET AI GET CREATIVE</div>
 
               <h2>Ready to Create Something Delicious?</h2>
 
               <p>
-                Gemini AI will analyze your ingredients and generate suitable recipes.
+                Intelligent Model will analyze your ingredients and generate suitable
+                recipes.
               </p>
 
               <button className="generate-button" type="submit">
                 ✧ Generate AI Recipe →
               </button>
 
-              <small>
-                Powered by Gemini · Your kitchen, reimagined
-              </small>
-
+              <small>Powered by Cyber Master · Your kitchen, reimagined</small>
             </section>
-
           </div>
 
           {/* 06 RESULTS */}
 
           <aside className="results-column">
-
             <div className="results-card">
-
-              <div className="results-top">
-                ✧ 06 — AI RECIPE RESULTS
-              </div>
+              <div className="results-top">✧ 06 — AI RECIPE RESULTS</div>
 
               <div className="results-status">
                 <span className="status-dot"></span>
-                GENERATED BY GEMINI AI
+        
               </div>
 
               <h2>
-                Recipe<br />
+                Recipe
+                <br />
                 <em>Suggestions</em>
               </h2>
 
               <div className="result-plate">
                 <div className="result-plate-inner">
-                  ✳
-                  <b>AI</b>
+                  ✳<b>AI</b>
                 </div>
               </div>
 
@@ -560,10 +498,7 @@ function Generate() {
               </p>
 
               <div className="result-includes">
-
-                <div className="includes-title">
-                  EACH RESULT WILL INCLUDE
-                </div>
+                <div className="includes-title">EACH RESULT WILL INCLUDE</div>
 
                 <ul>
                   <li>Recipe name and description</li>
@@ -574,15 +509,13 @@ function Generate() {
                   <li>Suggested ingredient alternatives</li>
                   <li>Save, download and share actions</li>
                 </ul>
-
               </div>
 
               <div className="results-footer">
-                🌿 ZERO-WASTE KITCHEN AI
+                🌿 SMART CHEF
                 <br />
-                POWERED BY GEMINI
+                
               </div>
-
             </div>
 
             <div className="side-tip">
@@ -591,23 +524,17 @@ function Generate() {
               <div>
                 <b>A little kitchen wisdom</b>
 
-                <p>
-                  AI cannot reliably detect harmful bacteria or toxins.
-                </p>
+                <p>AI cannot reliably detect harmful bacteria or toxins.</p>
               </div>
             </div>
-
           </aside>
-
         </form>
-
       </main>
 
       <footer className="footer">
-        <span>© 2026 ZERO-WASTE KITCHEN AI</span>
+        <span>© 2026 SMART CHEF</span>
         <span>TURN LEFTOVERS INTO POSSIBILITIES.</span>
       </footer>
-
     </div>
   );
 }

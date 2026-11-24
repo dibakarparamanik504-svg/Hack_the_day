@@ -15,55 +15,6 @@
   box-sizing: border-box;
 }
 
-.tracker-navbar {
-  min-height: 76px;
-  padding: 0 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  border-bottom: 1px solid #edf1ec;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
-
-.tracker-logo {
-  color: var(--tracker-green);
-  font-size: 16px;
-  font-weight: 800;
-  text-decoration: none;
-  letter-spacing: -.4px;
-}
-
-.tracker-logo span {
-  color: #263d31;
-}
-
-.tracker-nav-links {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.tracker-nav-links a {
-  color: #718078;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-decoration: none;
-}
-
-.tracker-nav-links a:hover,
-.tracker-nav-links a.active {
-  color: var(--tracker-green);
-}
-
-.tracker-nav-links a.active {
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--tracker-green);
-}
-
 .tracker-hero {
   padding: 80px 8%;
   display: grid;
@@ -770,6 +721,7 @@
   background: #193d2c;
   color: white;
   text-align: center;
+  margin-bottom: 60px;
 }
 
 .tracker-footer .tracker-logo {

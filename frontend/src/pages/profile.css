@@ -10,56 +10,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.profile-navbar {
-  min-height: 76px;
-  padding: 0 6%;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  border-bottom: 1px solid #e7ece5;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.profile-brand {
-  color: #244b35;
-  font-size: 17px;
-  font-weight: 800;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.brand-icon {
-  margin-right: 8px;
-}
-
-.profile-nav-links {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
-.profile-nav-links a {
-  color: #65736a;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  text-decoration: none;
-  padding: 10px 0;
-}
-
-.profile-nav-links a:hover,
-.profile-nav-links a.active {
-  color: #347b4b;
-}
-
-.profile-nav-links a.active {
-  border-bottom: 2px solid #347b4b;
-}
-
 .profile-container {
   width: min(1050px, 90%);
   margin: 0 auto;
@@ -408,6 +358,7 @@
 .profile-footer {
   text-align: center;
   padding: 40px 15px 20px;
+  margin-bottom: 60px;
 }
 
 .profile-footer h3 {

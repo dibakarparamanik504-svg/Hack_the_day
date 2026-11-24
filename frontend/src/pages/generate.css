@@ -32,93 +32,6 @@ button, input, select {
 .app-shell {
   min-height: 100vh;
 }
-
-/* NAVBAR */
-
-.topbar {
-  height: 78px;
-  padding: 0 7%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #fff;
-  border-bottom: 1px solid #e9eee7;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 10px;
-  letter-spacing: 1.1px;
-  line-height: 1.5;
-  min-width: 220px;
-}
-
-.brand b {
-  display: block;
-  font-weight: 800;
-}
-
-.brand-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 11px;
-  background: #e9f1e2;
-  display: grid;
-  place-items: center;
-  font-size: 18px;
-}
-
-.navigation {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 35px;
-}
-
-.navigation a {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  position: relative;
-  color: #78847a;
-  font-size: 9px;
-  letter-spacing: 1.3px;
-  font-weight: 800;
-}
-
-.navigation a:hover,
-.navigation a.selected {
-  color: var(--green);
-}
-
-.navigation a.selected:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--green);
-}
-
-.topbar-label {
-  font-size: 8px;
-  letter-spacing: 1.1px;
-  color: #738575;
-  font-weight: 800;
-}
-
-.online-dot,
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #84aa6c;
-  display: inline-block;
-}
-
 /* PAGE */
 
 .generate-page {
@@ -131,14 +44,6 @@ button, input, select {
   text-align: center;
   padding: 10px 0 42px;
 }
-
-.intro-label {
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: var(--green);
-  font-weight: 800;
-}
-
 .page-intro h1 {
   font: 800 clamp(38px, 5vw, 55px)/1.15 Manrope, sans-serif;
   letter-spacing: -2.8px;
@@ -706,6 +611,7 @@ button, input, select {
   justify-content: space-between;
   font-size: 8px;
   letter-spacing: 1px;
+  margin-bottom: 60px;
 }
 
 /* RESPONSIVE */

@@ -148,7 +148,7 @@ function CookingProblemSolver() {
         <div className="cps-brand">
           <span className="cps-logo">🌿</span>
           <div>
-            <h2>ZERO-WASTE KITCHEN AI</h2>
+            <h2>SMART CHEF</h2>
             <p>Smart Cooking</p>
           </div>
         </div>
