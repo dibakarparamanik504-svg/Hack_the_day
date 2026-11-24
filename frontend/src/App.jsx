@@ -6,6 +6,11 @@ import Explore from './pages/explore';
 import Saved from './pages/saved';
 import Tracker from './pages/tracker';
 import Profile from './pages/profile';
+import SmartCookingGuide from './pages/smart_feature/smartCookingGuide';
+import VoiceAssistant from './pages/smart_feature/voiceAssistant';
+import CookingProblemSolver from './pages/smart_feature/CookingProblemSolver';
+import SmartNutritionAnalyzer from './pages/smart_feature/SmartNutritionAnalyzer';
+import FoodSafetyAssistant from './pages/smart_feature/FoodSafetyAssistant';
 
 function App() {
   return (
@@ -18,6 +23,14 @@ function App() {
           <Route path="/saved" element={<Saved/>}/>
           <Route path="/tracker" element={<Tracker/>}/>
           <Route path="*" element={<Profile />} />
+
+
+          <Route path="/smart-cooking-guide" element={<SmartCookingGuide />} />
+          <Route path="/voice-assistant" element={<VoiceAssistant />} />
+          <Route path="/cooking-problem-solver" element={<CookingProblemSolver />} />
+          <Route path="/smart-nutrition-analyzer" element={<SmartNutritionAnalyzer />} />
+          <Route path="/food-safety-assistant" element={<FoodSafetyAssistant />} />
+
         </Routes>
       </BrowserRouter>
 
